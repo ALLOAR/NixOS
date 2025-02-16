@@ -13,7 +13,7 @@ curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home-configs
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home_configs/programs.nix -o $HOME/programs.nix
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home_configs/waybar.nix -o $HOME/waybar.nix
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home_configs/zsh.nix -o $HOME/zsh.nix
-
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/hyprland.conf -o $HOME/hyprland.conf
 cd /home/alloar/
 
 sudo mv configuration.nix /etc/nixos/
