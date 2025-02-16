@@ -34,3 +34,4 @@ mv alacritty.nix .config/home-manager/home_configs/
 mv programs.nix .config/home-manager/home_configs/
 mv waybar.nix .config/home-manager/home_configs/
 mv zsh.nix .config/home-manager/home_configs/
+echo "ALL GOOD"
