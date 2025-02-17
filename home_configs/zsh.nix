@@ -12,6 +12,7 @@
                 	act = "source venv/bin/activate";
 			deac = "deactivate";
 			p = "python";
+			p-start = "python3 -m venv venv";
 		};
                 oh-my-zsh = {
                         enable = true;
