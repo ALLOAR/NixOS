@@ -29,9 +29,11 @@ sudo mv keyboard.nix /etc/nixos/configurations/
 mkdir -p .config
 mkdir /home/alloar/.config/home-manager/
 mv home.nix .config/home-manager/
-mkdir /home/alloar/.config/home-maanger/home_configs
-mv alacritty.nix .config/home-manager/home_configs/
-mv programs.nix .config/home-manager/home_configs/
-mv waybar.nix .config/home-manager/home_configs/
-mv zsh.nix .config/home-manager/home_configs/
+cd .config/home-manager/
+mkdir -p home_configs
+cd /home/alloar/
+mv alacritty.nix ~/.config/home-manager/home_configs/
+mv programs.nix ~/.config/home-manager/home_configs/
+mv waybar.nix ~/.config/home-manager/home_configs/
+mv zsh.nix ~/.config/home-manager/home_configs/
 echo "ALL GOOD"
