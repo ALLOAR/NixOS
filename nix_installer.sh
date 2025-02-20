@@ -14,13 +14,13 @@ if [ $num == 1 ]; then
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o $HOME/idk.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/keyboard.nix -o $HOME/keyboard.nix
 elif [ $num == 2 ]; then
-
+	echo $num
 
 elif [ $num == 3 ]; then
-
+	echo $num
 
 elif [ $num == 4 ]; then
-
+	echo $num
 
 else 
 	echo "failed to select option, please select other option"
