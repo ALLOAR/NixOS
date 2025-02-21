@@ -6,7 +6,7 @@ start() {
 
 create_directories() {
   cd
-  sudo mkdir -p /etc/nixos/connfigurations
+  sudo mkdir -p /etc/nixos/configurations
   sudo mkdir -p /home/alloar/.config
   sudo mkdir -p /home/alloar/home-manager
   sudo mkdir -p /home/alloar/home-manager/home_configs
