@@ -1,7 +1,0 @@
-Ты хочешь, чтобы у тебя было **две локальные директории**, каждая работала со своей веткой (`main` и `home`), но из одного удалённого репозитория. Сейчас у тебя уже есть **инициализированная пустая папка**, и ты находишься в другой, где уже есть `main`.  
-cd /путь/к/home-folder
-git remote add origin git@github.com:username/repo.git
-id alloar
-uid=1000(alloar) gid=1000(users) groups=1000(users), 10(wheel), 90(network)
-sudo chown -R alloar:users /etc/nixos
-
