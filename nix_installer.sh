@@ -4,6 +4,11 @@ start() {
 	echo "what configuration you want"
 }
 
+confirm_roots() {
+sudo chown -R $USER:$wheel /etc/nixos
+sudo chown -R $USER:$wheel /home/alloar
+}
+
 create_directories() {
   cd
   sudo mkdir -p /etc/nixos/configurations
