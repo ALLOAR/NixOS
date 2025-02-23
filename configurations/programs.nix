@@ -6,7 +6,9 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
+	pciutils
 	python2
+	amdvlk
 	audacity
 	php
 	chromium

@@ -7,14 +7,13 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-	./hardware-configuration.nix
-	#./configurations/programs.nix
+	./configurations/hardware-configuration.nix
+	./configurations/programs.nix
 	./configurations/auto-delate.nix
 	./configurations/bluetooth.nix
-	./configurations/keyboard.nix
-	#./configurations/other_gpu_drivers.nix
-	#./configurations/laptop.nix
-	./configurations/idk.nix
+	#./configurations/amd.nix
+	#./configurations/nvidia.nix
+	./configurations/nvidia_prime.nix
     ];
   #services.logind.extraConfig = ''
   #HandleLidSwitch=ignore
