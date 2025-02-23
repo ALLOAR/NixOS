@@ -29,7 +29,7 @@ mv_home_files() {
   mv home.nix ~/.config/home-manager/
   mv alacritty.nix ~/.config/home-manager/home_configs/
   mv zsh.nix ~/.config/home-manager/home_configs/
-  mv hyprland.nix ~/.config/hypr/
+  mv hyprland.conf ~/.config/hypr/
 }
 download_nixos() {
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o $HOME/configuration.nix
