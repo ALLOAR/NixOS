@@ -6,10 +6,9 @@
 	};
 	
 	imports = [
-	./home_configs/zsh.nix
-	./home_configs/programsh.nix
-	./home_configs/waybar.nix
-	./home_configs/alacritty.nix
+	./home-configs/zsh.nix
+	./home-configs/waybar.nix
+	./home-configs/alacritty.nix
 ];
 }
 
