@@ -3,10 +3,10 @@
 {
   # Включаем драйвера для NVIDIA
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.driSupport32Bit = true;
 
   # Включаем OpenGL
-  hardware.opengl.enable = true;
-
+  hardware.graphics.enable = true;
   # Настройки для NVIDIA
   hardware.nvidia = {
     modesetting.enable = true;        # Включаем режимы работы NVIDIA

@@ -17,21 +17,8 @@
   #HandleLidSwitch=ignore
   #HandleLidSwitchDocked=ignore
   #'';
-  
-  #hardware.opengl = {
-   # enable = true;
-    #extraPackages = with pkgs; [
-     # nvidia-vaapi-driver
-      #vulkan-validation-layers
-      #vulkan-utility-libraries
-    #];
-  #};
-
-  #boot.kernelParams = [ 
-  #"nvidia_drm.modeset=1" 
-  #"nvidia.NVreg_RegistryDwords=OverrideMaxPerf=0x1"
-  #];
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.bluetooth.enable = true;  
+  services.blueman.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
@@ -40,24 +27,12 @@
   #autoSuggestion.enable = true;
   #syntaxHighlighting.enable = true;
   };
-
-  #hardware.graphics.enable32Bit = true;
-  #hardware.opengl.extraPackages = with pkgs; [
-  #amdvlk
-  #];
-  #services.xserver.enable = true;
-  #services.xserver.videoDrivers = [ "amdgpu" ];
-  # For 32 bit applications 
-  #hardware.opengl.extraPackages32 = with pkgs; [
-  #driversi686Linux.amdvlk
-  #];  
-
+  services.libinput.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   programs.hyprland.enable = true;
   services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.DesktopManager.hyprland.enable = true;
   #services.xserver.enable = false;
   #services.wayland.enable = true;
   networking.hostName = "nixos"; # Define your hostname.

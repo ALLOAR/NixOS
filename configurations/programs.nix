@@ -6,7 +6,12 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
+	pkgs.xorg.libX11	
+	steam-run
+	libinput
+	viber
 	pciutils
+	nvtopPackages.full
 	python2
 	amdvlk
 	audacity
@@ -41,18 +46,18 @@
 	oh-my-zsh
 	zsh-powerlevel10k		
 	virtualbox
- 	vulkan-tools
   	glxinfo
-  	nvtop
 	clinfo
+  	libva		
+	shotcut
+	#direvs
 	vulkan-headers
 	vulkan-loader
 	vulkan-validation-layers
-  	nvidia-vaapi-driver
-  	libva		
 	nvidia-vaapi-driver
-	shotcut
+	vulkan-tools
     # Coding stuff
+    nginx
     git
     vscode
     gnumake
