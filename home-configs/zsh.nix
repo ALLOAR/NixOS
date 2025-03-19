@@ -5,7 +5,7 @@
                 shellAliases = {
                         rebuild = "sudo nixos-rebuild switch";
                         rebuildh = "home-manager switch";
-                        prog = "sudo nano /etc/nixos/programs.nix";
+                        prog = "nano /etc/nixos/configurations/programs.nix";
                         c = "sudo nano /etc/nixos/configuration.nix";
 			cdc = "cd /etc/nixos/";
 			cdh = "cd /home/alloar/.config/home-manager/";
