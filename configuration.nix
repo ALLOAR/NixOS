@@ -1,4 +1,5 @@
 # Edit this configuration file to define what should be installed on
+
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 #f
@@ -20,6 +21,20 @@
   hardware.bluetooth.enable = true;  
   services.blueman.enable = true;
 
+  services.openssh = {
+  enable = true;
+  passwordAuthentication = true;  # Включает аутентификацию по паролю (без ключей)
+  permitRootLogin = "yes";  
+  settings = {
+    Port = 2222;  # Set the SSH port to 2222, change to your desired port
+  };
+  };
+  networking.firewall.allowedTCPPorts = [ 2222 ];  # Or 22 if you're using the default port
+  
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  services.devmon.enable = true;
+  
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
   enable = true;

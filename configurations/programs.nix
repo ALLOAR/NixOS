@@ -6,6 +6,7 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
+	mate.pluma
 	pkgs.xorg.libX11	
 	steam-run
 	libinput
@@ -50,12 +51,16 @@
 	clinfo
   	libva		
 	shotcut
-	#direvs
+	#drirevs
 	vulkan-headers
 	vulkan-loader
 	vulkan-validation-layers
 	nvidia-vaapi-driver
 	vulkan-tools
+	usbutils
+	udisks
+	gvfs
+	udiskie
     # Coding stuff
     nginx
     git
