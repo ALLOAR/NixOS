@@ -11,7 +11,7 @@ create_directories() {
   sudo mkdir -p /etc/nixos/configurations
   mkdir -p /home/alloar/.config
   mkdir -p /home/alloar/.config/home-manager
-  mkdir -p /home/alloar/.config/home-manager/home_configs
+  mkdir -p /home/alloar/.config/home-manager/home-configs
   mkdir -p /home/alloar/.config/hypr
 }
 
@@ -27,8 +27,8 @@ mv_nixos_files() {
 mv_home_files() {
   cd
   mv home.nix ~/.config/home-manager/
-  mv alacritty.nix ~/.config/home-manager/home_configs/
-  mv zsh.nix ~/.config/home-manager/home_configs/
+  mv alacritty.nix ~/.config/home-manager/home-configs/
+  mv zsh.nix ~/.config/home-manager/home-configs/
   mv hyprland.conf ~/.config/hypr/
 }
 download_nixos() {
@@ -42,8 +42,8 @@ download_nixos() {
 }
 download_home() { 
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home.nix -o $HOME/home.nix
-  curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home_configs/alacritty.nix -o $HOME/alacritty.nix
-  curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home_configs/zsh.nix -o $HOME/zsh.nix
+  curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home-configs/alacritty.nix -o $HOME/alacritty.nix
+  curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home-configs/zsh.nix -o $HOME/zsh.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/hyprland.conf -o $HOME/hyprland.conf
 }
 clean_system() {
