@@ -13,8 +13,24 @@ create_directories() {
   mkdir -p /home/alloar/.config/home-manager
   mkdir -p /home/alloar/.config/home-manager/home-configs
   mkdir -p /home/alloar/.config/hypr
+  mkdir -p /home/alloar/nixos
+  mkdir -p /home/alloar/sich_amussieren
+  mkdir -p /home/allaor/test
 }
-
+git() {
+  git config --global user.name "ALLOAR"
+  git config --global user.email "evgenzbiranik@gmail.com"
+  cd /home/alloar/.config/home-manager
+  ssh-keygen -t ed25519 -C "evgenzbiranik@gmail.com"
+  git init
+  git remote add origin git@github.com:ALLOAR/NixOS.git
+  cd /home/alloar/sich_amussieren
+  git init
+  git remote add origin git@github.com:ALLOAR/NixOS.git
+  cd /home/alloar/nixos
+  git remote add origin git@github.com:ALLOAR/NixOS.git
+  git init
+}
 mv_nixos_files() {
   cd
   sudo mv /etc/nixos/hardware-configuration.nix /etc/nixos/configurations/
@@ -54,3 +70,14 @@ download_home
 create_directories
 mv_nixos_files
 mv_home_files
+
+read -p "Пересобрать сразу же систему? yes/no (fingertype) " choise
+
+if [ "$choise" == "yes" ]; then
+    sudo nixos-rebuild switch
+    home-manager switch
+    git
+else
+    echo "Тогда делай все рукми долбоеб"
+fi
+
