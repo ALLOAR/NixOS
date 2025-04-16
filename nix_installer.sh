@@ -34,13 +34,11 @@ mv_home_files() {
 download_nixos() {
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o $HOME/configuration.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o $HOME/programs.nix
-  curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/auto-delate.nix -o $HOME/auto-delate.nix
-  curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/bluetooth.nix -o $HOME/bluetooth.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/amd.nix -o $HOME/amd.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia.nix -o $HOME/nvidia.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia_prime.nix -o $HOME/nvidia_prime.nix
 }
-download_home() { 
+download_home() {
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home.nix -o $HOME/home.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home-configs/alacritty.nix -o $HOME/alacritty.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home-configs/zsh.nix -o $HOME/zsh.nix
@@ -48,7 +46,9 @@ download_home() {
 }
 clean_system() {
 sudo rm -rf /home/alloar/*
+sudo rm -rf /etc/nixos/*
 }
+clean_system
 download_nixos
 download_home
 create_directories
