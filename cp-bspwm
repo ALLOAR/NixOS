@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp ~/.config/bspwm/* ~/bspwm/
+cp ~/.config/sxhkd/* ~/bspwm/
