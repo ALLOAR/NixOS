@@ -45,7 +45,7 @@ mv_home_files() {
   mv home.nix ~/.config/home-manager/
   mv alacritty.nix ~/.config/home-manager/home-configs/
   mv zsh.nix ~/.config/home-manager/home-configs/
-  mv hyprland.conf ~/.config/hypr/
+  #mv hyprland.conf ~/.config/hypr/
 }
 download_nixos() {
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o $HOME/configuration.nix
@@ -58,7 +58,18 @@ download_home() {
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home.nix -o $HOME/home.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home-configs/alacritty.nix -o $HOME/alacritty.nix
   curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/home-configs/zsh.nix -o $HOME/zsh.nix
-  curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/hyprland.conf -o $HOME/hyprland.conf
+}
+hyprland() {
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/hyprland.conf -o $HOME/hyprland.conf
+cd
+mkdir -p ~/.config/hypr/
+cp hyprland.conf ~/.config/hypr/
+}
+bspwm() {
+cd
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/bspwmrc -o $HOME/bspwmrc
+mkdir -p ~/.config/bspwm
+mv bspwmrc ~/.config/bspwm/
 }
 clean_system() {
 sudo rm -rf /home/alloar/*
@@ -71,6 +82,16 @@ create_directories
 mv_nixos_files
 mv_home_files
 
+echo " ==== what display manager you want - bspwm/hyprland === "
+read -p " 1/2 - " manager
+
+
+if [ "$manager" == 1 ]; then
+  bspwm
+  "after instalation change one line in the configuration.nix"
+elif [ "$manager" == 2]; then
+  hyprland
+
 read -p "Пересобрать сразу же систему? yes/no (fingertype) " choise
 
 if [ "$choise" == "yes" ]; then
@@ -78,6 +99,7 @@ if [ "$choise" == "yes" ]; then
     home-manager switch
     git
 else
-    echo "Тогда делай все рукми долбоеб"
+    echo "Тогда делай все руками долбоеб"
 fi
-
+echo "if you want change win_manager to hyprland/bspwm after instalation"
+echo "bspwm"
