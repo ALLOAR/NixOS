@@ -1,0 +1,14 @@
+super + Return
+	alacritty
+
+super + f
+	firefox
+
+super + {1-9}
+	bspc desktop -f ^{1-9}
+
+super + shift + {1-9,0}
+	bspc node -d ^{1-9,0}
+
+super + 2
+	bspc desktop -f ^2
