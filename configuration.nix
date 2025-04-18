@@ -23,9 +23,11 @@
 
   services.openssh = {
   enable = true;
-  passwordAuthentication = true;  # Включает аутентификацию по паролю (без ключей)
-  permitRootLogin = "yes";  
+  #passwordAuthentication = true;  # Включает аутентификацию по паролю (без ключей)
+  #permitRootLogin = "yes";  
   settings = {
+    PermitRootLogin = "yes";
+    PasswordAuthentication = true;
     Port = 2222;  # Set the SSH port to 2222, change to your desired port
   };
   };
