@@ -18,7 +18,6 @@ mkdir -p /mnt/boot
 mount ${DISK}1 /mnt/boot
 
 echo "[3/5] Копирование конфигов..."
-cp -r /mnt-root/nixos/* /mnt/etc/nixos/
 
 echo "[4/5] Установка..."
 nixos-install --no-root-passwd
