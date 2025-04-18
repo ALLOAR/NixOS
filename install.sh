@@ -5,9 +5,9 @@ DISK="/dev/sda"  # ❗ Измени только это
 
 echo "[1/5] Разметка $DISK..."
 parted $DISK -- mklabel gpt
-parted $DISK -- mkpart ESP fat32 1MiB 512MiB
+parted $DISK -- mkpart ESP fat32 1MiB 1500MiB
 parted $DISK -- set 1 boot on
-parted $DISK -- mkpart primary ext4 512MiB 100%
+parted $DISK -- mkpart primary ext4 1500MiB 100%
 
 mkfs.fat -F32 -n boot ${DISK}1
 mkfs.ext4 -L nixos ${DISK}2
