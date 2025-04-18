@@ -20,12 +20,8 @@ mount ${DISK}1 /mnt/boot
 echo "[3/5] Копирование конфигов..."
 
 cd
-sudo mv /mnt/etc/nixos/hardware-configuration.nix /etc/nixos/configurations/
-sudo mv programs.nix /mnt/etc/nixos/configurations/
-sudo mv configuration.nix /mnt/etc/nixos/
-sudo mv amd.nix /mnt/etc/nixos/configurations/
-sudo mv nvidia.nix /mnt/etc/nixos/configurations/
-sudo mv nvidia_prime.nix /mnt/etc/nixos/configurations/
+
+sudo nixos-generate-config --root /mnt
 
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o $HOME/configuration.nix
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o $HOME/programs.nix
@@ -33,13 +29,9 @@ curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuratio
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia.nix -o $HOME/nvidia.nix
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia_prime.nix -o $HOME/nvidia_prime.nix
 
-sudo nixos-generate-config --root /mnt
 
 cd /mnt/etc/nixos
 sudo mkdir -p configurations
-
-
-sudo mv hardware-configuration.nix configurations
 cd
 
 sudo mv programs.nix /mnt/etc/nixos/configurations/
@@ -47,9 +39,13 @@ sudo mv configuration.nix /mnt/etc/nixos/
 sudo mv amd.nix /mnt/etc/nixos/configurations/
 sudo mv nvidia.nix /mnt/etc/nixos/configurations/
 sudo mv nvidia_prime.nix /mnt/etc/nixos/configurations/
-echo "[4/5] Установка..."
-nixos-install
 
-echo "[5/5] Перезагрузка..."
+cd /mnt/etc/nixos/
+cp hardware-configuration.nix ~/
+sudo mv hardware-configuration.nix configurations
+cd
+
+echo "[4/4] Установка..."
+
 
 
