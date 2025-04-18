@@ -21,6 +21,7 @@ git() {
   git config --global user.name "ALLOAR"
   git config --global user.email "evgenzbiranik@gmail.com"
   cd /home/alloar/.config/home-manager
+  sudo ssh-keygen -t ed25519 -C "evgenzbiranik@gmail.com"
   ssh-keygen -t ed25519 -C "evgenzbiranik@gmail.com"
   git init
   git remote add origin git@github.com:ALLOAR/NixOS.git
@@ -68,7 +69,10 @@ cp hyprland.conf ~/.config/hypr/
 bspwm() {
 cd
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/bspwmrc -o $HOME/bspwmrc
-mkdir -p ~/.config/bspwm
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/home/sxhkdrc -o $HOME/sxhkdrc
+mkdir -p ~/.config/sxhkd/
+mkdir -p ~/.config/bspwm/
+mv sxhkd ~/.config/sxhkd/
 mv bspwmrc ~/.config/bspwm/
 }
 clean_system() {
