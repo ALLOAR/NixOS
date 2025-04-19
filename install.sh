@@ -31,7 +31,7 @@ echo "[3/5] Копирование конфигов..."
 cd
 
 cp /etc/configuration.nix ~/
-cp -r /etc/confgurations/ ~/
+cp -r /etc/configurations/ ~/
 
 sudo nixos-generate-config --root /mnt
 
@@ -46,11 +46,11 @@ cd /mnt/etc/nixos
 sudo mkdir -p configurations
 cd
 
-sudo mv programs.nix /mnt/etc/nixos/configurations/
+sudo mv ./configurations/programs.nix /mnt/etc/nixos/configurations/
 sudo mv configuration.nix /mnt/etc/nixos/
-sudo mv amd.nix /mnt/etc/nixos/configurations/
-sudo mv nvidia.nix /mnt/etc/nixos/configurations/
-sudo mv nvidia_prime.nix /mnt/etc/nixos/configurations/
+sudo mv ./configurations/amd.nix /mnt/etc/nixos/configurations/
+sudo mv ./configurations/nvidia.nix /mnt/etc/nixos/configurations/
+sudo mv ./configurations/nvidia_prime.nix /mnt/etc/nixos/configurations/
 
 cd /mnt/etc/nixos/
 cp hardware-configuration.nix ~/
