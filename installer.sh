@@ -21,7 +21,7 @@ echo "[2/5] Монтирование..."
 sudo mkdir -p /mnt
 mount ${DISK}2 /mnt
 mkdir -p /mnt/boot
-mount ${DISK}1 /mnt/boot && boot
+mount ${DISK}1 /mnt/boot && cd
 sudo nixos-generate-config --root /mnt
 }
 create() {
@@ -31,10 +31,10 @@ sudo mkdir -p configurations
 nix_install() {
 echo "[3/5] Копирование конфигов..."
 curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o /mnt/etc/nixos/configuration.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o /mnt/etc/nixos/configrations/programs.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/amd.nix -o /mnt/etc/nixos/configrations/amd.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia.nix -o /mnt/etc/nixos/configrations/nvidia.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia_prime.nix -o /mnt/etc/nixos/configrations/nvidia_prime.nix
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o /mnt/etc/nixos/configurations/programs.nix
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/amd.nix -o /mnt/etc/nixos/configurations/amd.nix
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia.nix -o /mnt/etc/nixos/configurations/nvidia.nix
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia_prime.nix -o /mnt/etc/nixos/configurations/nvidia_prime.nix
 }
 move() {
 cd /mnt/etc/nixos
