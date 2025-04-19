@@ -1,0 +1,37 @@
+echo "[3/5] Копирование конфигов..."
+
+cd
+
+cp /etc/configuration.nix ~/
+cp -r /etc/configurations/ ~/
+
+sudo nixos-generate-config --root /mnt
+
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration>
+curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration>
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration>
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration>
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration>
+
+
+cd /mnt/etc/nixos
+sudo mkdir -p configurations
+cd
+
+
+sudo mv configuration.nix /mnt/etc/nixos/
+sudo mv configurations /mnt/etc/nixos
+#sudo mv ./configurations/programs.nix /mnt/etc/nixos/configurations/
+#sudo mv ./configurations/amd.nix /mnt/etc/nixos/configurations/
+#sudo mv ./configurations/nvidia.nix /mnt/etc/nixos/configurations/
+#sudo mv ./configurations/nvidia_prime.nix /mnt/etc/nixos/configurations/
+
+
+cd /mnt/etc/nixos/
+cp hardware-configuration.nix ~/
+sudo mv hardware-configuration.nix configurations
+cd
+
+nix-channel --add https://nixos.org/channels/nixos-24.11 nixos nix-channel --update
+
+echo "[4/4] Установка..."
