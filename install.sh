@@ -19,6 +19,9 @@ mkfs.fat -F32 -n boot ${DISK}1
 mkfs.ext4 -L nixos ${DISK}2
 
 echo "[2/5] Монтирование..."
+
+sudo mkdir -p /mnt
+
 mount ${DISK}2 /mnt
 mkdir -p /mnt/boot
 mount ${DISK}1 /mnt/boot
@@ -27,13 +30,16 @@ echo "[3/5] Копирование конфигов..."
 
 cd
 
+cp /etc/configuration.nix ~/
+cp -r /etc/confgurations/ ~/
+
 sudo nixos-generate-config --root /mnt
 
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o $HOME/configuration.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o $HOME/programs.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/amd.nix -o $HOME/amd.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia.nix -o $HOME/nvidia.nix
-curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia_prime.nix -o $HOME/nvidia_prime.nix
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o $HOME/configuration.nix
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o $HOME/programs.nix
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/amd.nix -o $HOME/amd.nix
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia.nix -o $HOME/nvidia.nix
+#curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia_prime.nix -o $HOME/nvidia_prime.nix
 
 
 cd /mnt/etc/nixos
