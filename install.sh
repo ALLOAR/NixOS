@@ -3,7 +3,7 @@ set -e
 
 DISK="/dev/sda"  # ❗ Измени только это
 
-echo "you realy want erase this disk?"
+echo " you realy want erase this disk?"
 
 read -p "$DISK" p
 
