@@ -7,7 +7,7 @@ echo "you realy want erase this disk?"
 
 read -p "$DISK" p
 
-wipefs --all $DISK
+rm -rf ~/*
 
 echo "[1/5] Разметка $DISK..."
 parted $DISK -- mklabel gpt
