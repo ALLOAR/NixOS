@@ -29,7 +29,7 @@
     "configurations/amd.nix" = {
       source = ./sys-conf/configurations/amd.nix;
     };
-    "configrations/nvidia.nix" = {
+    "configurations/nvidia.nix" = {
       source = ./sys-conf/configurations/nvidia.nix;
     };
     "configurations/nvidia_prime.nix" = {
