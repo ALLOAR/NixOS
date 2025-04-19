@@ -3,6 +3,12 @@ set -e
 
 DISK="/dev/sda"  # ❗ Измени только это
 
+echo "you realy want erase this disk?"
+
+read -p "$DISK" p
+
+wipefs --all $DISK
+
 echo "[1/5] Разметка $DISK..."
 parted $DISK -- mklabel gpt
 parted $DISK -- mkpart ESP fat32 1MiB 1500MiB
