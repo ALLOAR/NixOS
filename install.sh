@@ -46,11 +46,14 @@ cd /mnt/etc/nixos
 sudo mkdir -p configurations
 cd
 
-sudo mv ./configurations/programs.nix /mnt/etc/nixos/configurations/
+
 sudo mv configuration.nix /mnt/etc/nixos/
-sudo mv ./configurations/amd.nix /mnt/etc/nixos/configurations/
-sudo mv ./configurations/nvidia.nix /mnt/etc/nixos/configurations/
-sudo mv ./configurations/nvidia_prime.nix /mnt/etc/nixos/configurations/
+sudo mv configurations /mnt/etc/nixos
+#sudo mv ./configurations/programs.nix /mnt/etc/nixos/configurations/
+#sudo mv ./configurations/amd.nix /mnt/etc/nixos/configurations/
+#sudo mv ./configurations/nvidia.nix /mnt/etc/nixos/configurations/
+#sudo mv ./configurations/nvidia_prime.nix /mnt/etc/nixos/configurations/
+
 
 cd /mnt/etc/nixos/
 cp hardware-configuration.nix ~/
