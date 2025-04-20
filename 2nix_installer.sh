@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 cd
-echo "  [1/ ] "
+echo "  [1/2] "
 if [ -d "/etc/nixos/configurations" ]; then
     echo "Директория configurations существует"
     echo "Установка Конфигураций не нужна"
@@ -22,11 +22,16 @@ else
     mkdir -p ~/.config/home-manager
 fi
 
-echo "  [2/ ] "
-cd ~/.config/home-manager
-git clone --branch home --single-branch https://github.com/ALLOAR/NixOS
-cd NixOS
-cp -r * ~/.config/home-manager
-cd ~/.config/home-manager
-rm -rf NixOS
+echo "  [2/2] "
+if [ -d "~/.config/home-manager/home-configs" ]; then
+    echo "why you start instalation?"
+else
+    rm -rf ~/.config/home-manager/*
+    cd ~/.config/home-manager
+    git clone --branch home --single-branch https://github.com/ALLOAR/NixOS
+    cd NixOS
+    cp -r * ~/.config/home-manager
+    cd ~/.config/home-manager
+    rm -rf NixOS
+fi
 
