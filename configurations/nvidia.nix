@@ -3,7 +3,7 @@
 {
   # Включаем драйвера для NVIDIA
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.graphics.enable32Bit = true;
+  hardware.opengl.driSupport32Bit = true;
 
   # Включаем OpenGL
   hardware.graphics.enable = true;

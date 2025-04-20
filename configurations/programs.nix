@@ -6,6 +6,8 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
+	bspwm
+	sxhkd
 	mate.pluma
 	pkgs.xorg.libX11	
 	steam-run
