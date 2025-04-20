@@ -6,6 +6,10 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
+	picom
+	picom-pijulius
+	xfce.thunar
+ 	libnotify
 	kitty
 	mate.pluma
 	pkgs.xorg.libX11	

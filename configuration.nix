@@ -18,17 +18,12 @@
   #HandleLidSwitch=ignore
   #HandleLidSwitchDocked=ignore
   #'';
-  hardware.bluetooth.enable = true;  
-  services.blueman.enable = true;
 
-  #services.displayManager.gdm.enable = true;
-  #services.xserver.enable = true;
 
-  # BSPWM
-  #services.xserver.windowManager.bspwm.enable = true;
-
-  # Hyprland
-  #programs.hyprland.enable = true;
+  services.xserver.enable = true;
+  services.xserver.windowManager.bspwm.enable = true;
+  programs.hyprland.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
 
   services.openssh = {
   enable = true;
@@ -42,40 +37,42 @@
   };
   networking.firewall.allowedTCPPorts = [ 2222 ];  # Or 22 if you're using the default port
   
-  services.udisks2.enable = true;
-  services.gvfs.enable = true;
-  services.devmon.enable = true;
   
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
   enable = true;
   enableCompletion = true;
-  #autoSuggestion.enable = true;
-  #syntaxHighlighting.enable = true;
   };
-  services.libinput.enable = true;
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  programs.hyprland.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  #services.displayManager.sddm.enable = true;
-
-  #services.xserver.enable = false;
   #services.wayland.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
+
+  # Other shit
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  services.devmon.enable = true;
+  services.libinput.enable = true;
+  networking.networkmanager.enable = true;
+
+  nix = {
+    package = pkgs.nix;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
