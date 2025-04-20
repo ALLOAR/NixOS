@@ -10,11 +10,9 @@
     [ # Include the results of the hardware scan.
 	./configurations/hardware-configuration.nix
 	./configurations/programs.nix
-	./configurations/amd.nix
-	#./configurations/nvidia.nix
+	#./configurations/amd.nix
+	./configurations/nvidia.nix
 	#./configurations/nvidia_prime.nix
-	./configurations/hyprland.nix
-	#./configurations/bspwm.nix
     ];
   #services.logind.extraConfig = ''
   #HandleLidSwitch=ignore
@@ -22,15 +20,23 @@
   #'';
   hardware.bluetooth.enable = true;  
   services.blueman.enable = true;
-  
-  services.xserver.desktopManager.plasma5.enable = false; # если не хочешь Plasma
-  services.xserver.desktopManager.gnome.enable = false; # если не хочешь GNOME
-  
+
+  #services.displayManager.gdm.enable = true;
+  #services.xserver.enable = true;
+
+  # BSPWM
+  #services.xserver.windowManager.bspwm.enable = true;
+
+  # Hyprland
+  #programs.hyprland.enable = true;
+
   services.openssh = {
   enable = true;
-  passwordAuthentication = true;  # Включает аутентификацию по паролю (без ключей)
-  permitRootLogin = "yes";  
+  #passwordAuthentication = true;  # Включает аутентификацию по паролю (без ключей)
+  #permitRootLogin = "yes";  
   settings = {
+    PermitRootLogin = "yes";
+    PasswordAuthentication = true;
     Port = 2222;  # Set the SSH port to 2222, change to your desired port
   };
   };
@@ -51,8 +57,11 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  #programs.hyprland.enable = true;
+
+  programs.hyprland.enable = true;
   services.xserver.displayManager.gdm.enable = true;
+  #services.displayManager.sddm.enable = true;
+
   #services.xserver.enable = false;
   #services.wayland.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
@@ -88,6 +97,7 @@
     isNormalUser = true;
     description = "alloar";
     extraGroups = [ "networkmanager" "wheel" ];
+    password = "1";
     packages = with pkgs; [];
   };
   # Allow unfree packages
