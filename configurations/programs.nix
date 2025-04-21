@@ -6,6 +6,7 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
+	hyprshot
 	picom
 	picom-pijulius
 	xfce.thunar
