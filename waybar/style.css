@@ -13,30 +13,68 @@ window#waybar {
 #custom-launcher {
     background-color: transparent;
     color: #89b4fa;
-    font-size: 24px;
-    padding: 0 12px;
-    margin: 4px 0;
+    font-size: 20px;
+    padding: 0 10px;
+    margin: 2px 0;
 }
 
+
 #workspaces button {
-    /*background: transparent;*/
     color: #cdd6f4;
-    margin: 4px 2px;
+    margin: 2px 1px;
     padding: 0 8px;
+    background: transparent;
+    border: none; /* убираем стандартную рамку */
 }
 
 #workspaces button.active {
-    background: #585b70;
+    background: transparent; /* убираем фон */
+    border: 2px solid #1348b2; /* розово-жёлтый контур (примерно) */
     border-radius: 4px;
 }
 
-#cpu, #clock, #memory, #pulseaudio {
-    background-color: rgba(30, 30, 46, 0.8);
+#temperature {
+background-color: rgba(255, 11, 137, 0.8);
     padding: 4px 12px;
+    margin: 4px 0;
+    border-bottom-left-radius: 20px;
+}
+#clock {
+	background-color: rgba(255, 11, 137, 0.8);
+	padding: 2px 6px; /* 2 - сверху снизу, 6 - српава, слева*/
+	margin: 4px 0;
+	border-radius: 0px;
+}
+#disk{ 
+    background-color: #7a65b4;
+    padding: 4px 12px; /* 10px сверху, 20px справа, 30px снизу, 40px слева */
     margin: 4px 0;
     border-radius: 8px;
 }
-
+#network{
+    background-color: #7a65b4;
+    padding: 4px 12px; /* 10px сверху, 20px справа, 30px снизу, 40px слева */
+    margin: 4px 0;
+    border-radius: 8px;
+}
+#pulseaudio {
+        background-color: rgba(255, 11, 137, 0.8);
+        padding: 4px 12px 4px 12px;
+        margin: 4px 0;
+	border-bottom-right-radius: 20px
+}
+#memory {
+        background-color: rgba(255, 11, 137, 0.8);
+        padding: 2px 6px;
+        margin: 4px 0;
+        border-radius: 0px;
+}
+#cpu{
+        background-color: rgba(255, 11, 137, 0.8);
+        padding: 4px 10px;
+        margin: 4px 0;
+        border-radius: 0px;
+}
 
 #custom-power {
     background-color: transparent;
@@ -45,3 +83,4 @@ window#waybar {
     padding: 0 12px;
     margin: 4px 0;
 }
+

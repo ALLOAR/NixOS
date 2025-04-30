@@ -1,0 +1,54 @@
+{
+    "layer": "top",
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "cpu"],
+    "modules-center": ["memory", "clock", "pulseaudio"],
+    "modules-right": ["custom/power"],
+    
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 Muted",
+        "scroll-step": 5,
+        "on-click": "pamixer -t",
+        "format-icons": {
+            "default": ["󰖁", "󰕾", "󰕿", "󰖀"]
+        }
+    },
+
+    "clock": {
+	"interval": 60,
+	"tooltip": true,
+	"format": "{:%H:%M}",
+	"tooltip-format": "{:%Y-%m-%d}",
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "󰻠 {usage}%",
+        "max-length": 10
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "󰍛 {percentage}%",
+        "max-length": 10
+    },
+
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "wofi --show drun",
+        "on-click-right": "killall wofi",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": " ",
+        "on-click": "wlogout --protocol layer-shell",
+        "tooltip": false
+    },
+}

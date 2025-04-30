@@ -1,13 +1,47 @@
 {
     "layer": "top",
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "cpu", "memory"],
-    "modules-center": [],
-    "modules-right": ["clock", "pulseaudio", "custom/power"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
+    "modules-center": ["temperature", "cpu", "clock", "memory", "pulseaudio"],
+    "modules-right": ["network", "battery", "disk", "custom/power"],
     
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate"
     },
+
+
+
+    "network": {
+        "format-wifi" : "wifi {bandwidthDownBits}",
+        "format-ethernet": "enth {bandwidthDownBits}",
+        "format-disconnected" : "no network",
+        "interval": 5,
+        "tooltip": false
+    },
+
+"temperature": {
+	"format": "{temperatureC}°C"   
+	},
+
+ "disk": {
+    "format": "{used}/{total}",
+    "path": "/",
+    "interval": 30
+    },
+
+    "battery": {
+    "format": "{capacity}% {icon}",
+    "format-charging": "⚡ {capacity}%",
+    "format-plugged": "🔌 {capacity}%",
+    "format-alt": "{time} ({capacity}%)",
+    "interval": 30,
+    "states": {
+        "good": 80,
+        "warning": 30,
+        "critical": 15
+    },
+    "format-icons": ["", "", "", "", ""]
+},
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -19,12 +53,12 @@
         }
     },
 
-"clock": {
+    "clock": {
 	"interval": 60,
 	"tooltip": true,
-	"format": "{:%H.%M}",
+	"format": "{:%H:%M}",
 	"tooltip-format": "{:%Y-%m-%d}",
-},
+    },
 
     "cpu": {
         "interval": 5,
@@ -47,7 +81,7 @@
 
     "custom/power": {
         "format": " ",
-        "on-click": "wlogout --protocol layer-shell",
+        "on-click": "poweroff",
         "tooltip": false
-    }
+    },
 }
