@@ -34,49 +34,62 @@ window#waybar {
 }
 
 #temperature {
-background-color: #0F1218;
+    border-bottom: 1px solid #88c0d0;
+    background-color: #0F1218;
     padding: 4px 12px;
     margin: 4px 0;
     border-bottom-left-radius: 20px;
 }
 
 #clock{
+	border-bottom: 1px solid #88c0d0;	
 	background-color: #0F1218;
 	padding: 2px 6px; /* 2 - сверху снизу, 6 - српава, слева*/
 	margin: 4px 0;
 	border-radius: 0px;
 }
 #disk{ 
-    background-color: #E44071;
+    background-color: #2A3239;
     padding: 4px 12px; /* 10px сверху, 20px справа, 30px снизу, 40px слева */
     margin: 4px 0;
-    border-radius: 8px;
+    border-bottom-right-radius: 20px;
+    border-bottom: 1px solid #88c0d0;
+}
+#battery{
+    background-color: #2A3239;
+    padding: 4px 12px; /* 10px сверху, 20px справа, 30px снизу, 40px слева */
+    margin: 4px 0;
+    border-bottom: 1px solid #88c0d0;
 }
 #network{
-    background-color: #E44071;
+    background-color: #2A3239;
     padding: 4px 12px; /* 10px сверху, 20px справа, 30px снизу, 40px слева */
     margin: 4px 0;
-    border-radius: 8px;
+    border-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom: 1px solid #88c0d0;
 }
 #pulseaudio {
+ 	border-bottom: 1px solid #88c0d0;
         background-color: #0F1218;
         padding: 4px 12px 4px 12px;
         margin: 4px 0;
 	border-bottom-right-radius: 20px
 }
 #memory {
-        background-color: #2A3239;
+	border-bottom: 1px solid #88c0d0; 
+        background-color: #0F1218;
         padding: 2px 6px;
         margin: 4px 0;
         border-radius: 0px;
 }
 #cpu{
-        background-color: #2A3239;
+	border-bottom: 1px solid #88c0d0; 
+        background-color: #0F1218;
         padding: 4px 10px;
         margin: 4px 0;
         border-radius: 0px;
 }
-
 #custom-power {
     background-color: transparent;
     color: #f38ba8;

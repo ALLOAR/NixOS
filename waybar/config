@@ -20,13 +20,16 @@
     },
 
 "temperature": {
+	"sensor": "k10temp-pci-00c3",
 	"format": "{temperatureC}°C"   
 	},
 
  "disk": {
     "format": "{used}/{total}",
+    "on-click": "thunar",
     "path": "/",
     "interval": 30
+  //   "on-click": ["thunar"],
     },
 
     "battery": {
