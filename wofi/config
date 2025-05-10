@@ -1,0 +1,17 @@
+# ~/.config/wofi/config
+
+show=drun
+prompt=Run:
+term=alacritty
+insensitive=true
+allow_images=true
+width=900
+height=500
+lines=10
+columns=4
+hide_scroll=true
+no_actions=true
+allow_markup=false
+location=center
+anchor=center
+always_parse_args=true

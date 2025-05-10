@@ -1,0 +1,36 @@
+window {
+  background-color: rgba(20, 20, 20, 0.80);
+  border: 1px solid #FE754E;
+  border-radius: 12px;
+  font-family: JetBrainsMono, monospace;
+  font-size: 14px;
+  color: #cdd6f4;
+}
+
+#input {
+  margin: 8px;
+  border: 2px;
+  border-radius: 6px;
+  padding: 6px;
+  background-color: #000000;
+  color: #ffffff;
+  outline: none;  
+}
+
+#input:focus {
+  border: 2px solid #990074;
+  background-color: #000000;
+  outline: none;  
+}
+
+#entry {
+  padding: 6px;
+  margin: 2px;
+}
+
+#entry:selected {
+  margin: 4px;
+  background-color: #990074;
+  color: #cdd6f4;
+  border-radius: 6px;
+}
