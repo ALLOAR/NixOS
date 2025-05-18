@@ -31,8 +31,7 @@ cd /mnt/etc/nixos/
 cp hardware-configuration.nix ~/
 sudo mv hardware-configuration.nix configurations
 cd
-
+nix-channel --add https://nixos.org/channels/nixos-24.11 nixos nix-channel --update
 echo "[4/4] Установка..."
-
 
 
