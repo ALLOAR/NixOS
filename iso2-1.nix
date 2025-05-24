@@ -23,21 +23,6 @@
       source = ./install.sh;
       mode = "0755";  # Делаем исполняемым
     };
-    "configuration.nix" = {
-      source = ./sys-conf/configuration.nix;
-    };
-    "configurations/amd.nix" = {
-      source = ./sys-conf/configurations/amd.nix;
-    };
-    "configurations/nvidia.nix" = {
-      source = ./sys-conf/configurations/nvidia.nix;
-    };
-    "configurations/nvidia_prime.nix" = {
-      source = ./sys-conf/configurations/nvidia_prime.nix;
-    };
-    "configurations/programs.nix" = {
-      source = ./sys-conf/configurations/programs.nix;
-    };
   };
   # Копируем из /etc/install.sh в / при загрузке
   system.activationScripts.installScript = {
