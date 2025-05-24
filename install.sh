@@ -10,11 +10,10 @@ echo "[3/5] Копирование конфигов..."
 cd
 sudo nixos-generate-config --root /mnt
 mkdir -p /mnt/etc/nixos/configurations
-mkdir -p test && cd test
+cp /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/configurations/
 git clone --branch main --single-branch https://github.com/ALLOAR/NixOS
 cd NixOS
-cp -r * /etc/nixos/
-rm -rf ~/test
+cp -r * /mnt/etc/nixos/
 cd
 nix-channel --add https://nixos.org/channels/nixos-24.11 nixos nix-channel --update
 sudo nano /mnt/etc/nixos/configurations.nix
