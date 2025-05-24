@@ -57,6 +57,7 @@
   services.devmon.enable = true;
   services.libinput.enable = true;
   networking.networkmanager.enable = true;
+  services.tlp.enable = true;
 
   nix = {
     package = pkgs.nix;
@@ -85,7 +86,6 @@
     isNormalUser = true;
     description = "alloar";
     extraGroups = [ "networkmanager" "wheel" ];
-    password = "1";
     packages = with pkgs; [];
   };
   # Allow unfree packages

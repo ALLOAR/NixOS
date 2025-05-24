@@ -6,36 +6,23 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
-	hyprshot
-	picom
-	picom-pijulius
-	xfce.thunar
- 	libnotify
-	kitty
-	mate.pluma
-	pkgs.xorg.libX11	
-	steam-run
-	libinput
-	viber
-	pciutils
-	nvtopPackages.full
-	python2
-	amdvlk
-	audacity
-	php
-	chromium
-	telegram-desktop
-	alacritty
-	obs-studio
-	rofi
-	wofi
-	mpv
-	kdenlive
-	discord
-	gparted
-	obsidian
-	zoom-us
-	pcmanfm-qt
+	libreoffice
+	hyprpicker 
+	hyprshot picom 
+	picom-pijulius 
+	xfce.thunar libnotify 
+	kitty mate.pluma 
+	pkgs.xorg.libX11 
+	steam-run libinput viber 
+	pciutils 
+	nvtopPackages.full 
+	python2 amdvlk audacity 
+	php chromium 
+	telegram-desktop 
+	alacritty obs-studio 
+	rofi wofi mpv kdenlive 
+	discord gparted obsidian 
+	zoom-us pcmanfm-qt
 	#polymc
 	w3m
 	firefox
