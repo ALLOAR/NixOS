@@ -24,6 +24,12 @@ mkfs.ext4 -L nixos ${DISK}3
 echo "[3/5] Активация swap..."
 swapon ${DISK}2
 
+echo "[3.5/5] Монтирование разделов..."
+mount ${DISK}3 /mnt
+mkdir -p /mnt/boot
+mount ${DISK}1 /mnt/boot
+
+
 echo "[4/5] Копирование конфигов..."
 cd
 sudo nixos-generate-config --root /mnt
