@@ -2,32 +2,37 @@
 set -e
 cd
 echo "  [1/2] "
-if [ -d "/etc/nixos/configurations" ]; then
-    echo "Директория configurations существует"
-    echo "Установка Конфигураций не нужна"
-else
-    mkdir -p /etc/nixos/configurations
-    curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configuration.nix -o /etc/nixos/configurations/configuration.nix > /dev/null 2>&1
-    curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/programs.nix -o /etc/nixos/configurations/programs.nix > /dev/null 2>&1
-    curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/amd.nix -o /etc/nixos/configurations/amd.nix > /dev/null 2>&1
-    curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia.nix -o /etc/nixos/configurations/nvidia.nix > /dev/null 2>&1
-    curl https://raw.githubusercontent.com/ALLOAR/NixOS/refs/heads/main/configurations/nvidia_prime.nix -o /etc/nixos/configurations/nvidia_prime.nix > /dev/null 2>&1
-fi
-cd
-if [ -d "~/.config/hypr" ]; then
-    echo "Директория существует"
-else
-    mkdir -p ~/.config
-    mkdir -p ~/.config/hypr/
-    mkdir -p ~/.config/home-manager
-fi
+echo "-- what you want ---"
+choise=$(gum choose update new_system update_nix update_home)
+echo "You want that $choise?"
 
-echo "  [2/2] "
-if [ -d "~/.config/home-manager/home-configs" ]; then
-    echo "why you start instalation?"
-else
-    rm -rf ~/.config/home-manager/* > /dev/null 2>&1
-    cd ~/.config/home-manager > /dev/null 2>&1
+cd
+echo -e "\e[32mCloning main git\e[0m"
+git clone --branch main --single-branch https://github.com/ALLOAR/NixOS
+cd NixOS
+mkdir -p ~/save_nix_configs
+mkdir -p /etc/nixos/configurations
+mkdir -p ~/.config
+mkdir -p ~/.config/home-manager/
+
+case "$choise" in
+  update) cp -r /etc/nixos/* ~/save_nix_configs/ 
+	  cp -r * /etc/nixos/
+	  rm -rf NixOS
+	  git clone --branch home --single-branch https://github.com/ALLOAR/NixOS > /dev/null 2>&1
+	  cd NixOS 
+	  cp -r * ~/.config/home-manager/
+	  cd
+	  ;;
+  new_system) cp -r * /etc/nixos/ && cd
+	  echo -e "\e[32m Cloning home git\e[0m"
+	  git clone --branch home --single-branch https://github.com/ALLOAR/NixOS > /dev/null 2>&1
+	  cd NixOS
+	  cp -r * ~/.config/home-manager/ 
+	  ;;
+
+
+
     echo "cloning git"
     git clone --branch home --single-branch https://github.com/ALLOAR/NixOS > /dev/null 2>&1
     cd NixOS
