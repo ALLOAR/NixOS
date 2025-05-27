@@ -14,7 +14,7 @@ mkdir -p ~/save_nix_configs
 mkdir -p /etc/nixos/configurations
 mkdir -p ~/.config
 mkdir -p ~/.config/home-manager/
-
+mkdir -p ~/.config/hypr/
 case "$choise" in
   update) cp -r /etc/nixos/* ~/save_nix_configs/
 	  cp -r * /etc/nixos/
@@ -32,17 +32,7 @@ case "$choise" in
 	  cp -r * ~/.config/home-manager/
 	  cp hyprland.conf ~/.config/hypr/
 	  ;;
-
-
-
-    echo "cloning git"
-    git clone --branch home --single-branch https://github.com/ALLOAR/NixOS > /dev/null 2>&1
-    cd NixOS
-    cp hyprland.conf ~/.config/hypr/
-    cp -r * ~/.config/home-manager
-    cd ~/.config/home-manager
-    rm -rf NixOS
-fi
+esac
 if [ -d ~/.ssh ]; then
     echo "ssh key already exist"
 else
