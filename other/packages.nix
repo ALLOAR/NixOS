@@ -2,6 +2,12 @@
 {
 
 environment.systemPackages = with pkgs; [
+	# GAMING STUFF	
+	vulkan-tools
+	vulkan-loader
+	vulkan-validation-layers
+	mesa-demos
+	
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installe>
         neovim
         wget
@@ -34,6 +40,7 @@ environment.systemPackages = with pkgs; [
         discord
         #pv
         brightnessctl
+
 ];
   fonts.enableFontDir = true;
 

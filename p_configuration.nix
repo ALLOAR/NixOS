@@ -7,6 +7,7 @@
 	./other/packages.nix
 	./other/stuff.nix
 	./other/config.nix
+	./other/game.nix
 	
     ];
 }
