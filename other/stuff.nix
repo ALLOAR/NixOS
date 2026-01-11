@@ -7,6 +7,8 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   
   time.timeZone = "Europe/Warsaw";
+
+  services.displayManager.gdm.enable = true;
   
   users.users.alloar = {
      isNormalUser = true;
