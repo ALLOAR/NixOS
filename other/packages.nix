@@ -8,6 +8,7 @@ environment.systemPackages = with pkgs; [
 	vulkan-validation-layers
 	mesa-demos
 	
+	gsimplecal
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installe>
         neovim
         wget
@@ -40,6 +41,12 @@ environment.systemPackages = with pkgs; [
         discord
         #pv
         brightnessctl
+	docker
+	where-is-my-sddm-theme
+	lm_sensors
+	jq
+	ddcutil
+	easyeffects
 
 ];
   fonts.enableFontDir = true;

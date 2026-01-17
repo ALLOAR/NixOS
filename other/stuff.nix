@@ -8,8 +8,23 @@
   
   time.timeZone = "Europe/Warsaw";
 
-  services.displayManager.gdm.enable = true;
+  #services.displayManager.gdm.enable = true;
   
+  
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "catppuccin-mocha-mauve";
+    # Enables experimental Wayland support
+    wayland.enable = true;
+  };
+
+  environment.systemPackages = [ 
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "mauve";
+    })
+  ];
+
   users.users.alloar = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
