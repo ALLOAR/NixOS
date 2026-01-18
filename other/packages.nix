@@ -47,6 +47,7 @@ environment.systemPackages = with pkgs; [
 	jq
 	ddcutil
 	easyeffects
+	qemu
 
 ];
   fonts.enableFontDir = true;
