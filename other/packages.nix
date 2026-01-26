@@ -48,7 +48,12 @@ environment.systemPackages = with pkgs; [
 	ddcutil
 	easyeffects
 	qemu
-
+	smartmontools
+	parted
+	qbittorrent
+	cava
+	cmatrix
+	obsidian
 ];
   fonts.enableFontDir = true;
 
