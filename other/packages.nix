@@ -54,6 +54,13 @@ environment.systemPackages = with pkgs; [
 	cava
 	cmatrix
 	obsidian
+	python313Packages.python
+	tree
+	docker-compose
+];
+
+nixpkgs.config.permittedInsecurePackages = [
+#	"ciscoPacketTracer8-8.2.2"
 ];
   fonts.enableFontDir = true;
 
