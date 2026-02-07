@@ -57,6 +57,8 @@ environment.systemPackages = with pkgs; [
 	python313Packages.python
 	tree
 	docker-compose
+	tailscale
+	traceroute
 ];
 
 nixpkgs.config.permittedInsecurePackages = [

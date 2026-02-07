@@ -4,6 +4,20 @@
   programs.zsh.enable = true;
   programs.git.enable = true;
   
+  services.tailscale.enable = true;
+  services.openssh = {
+  enable = true;
+  ports = [ 2222 ];
+  	settings = {
+  	  	PasswordAuthentication = true;
+    		KbdInteractiveAuthentication = false;
+    		PermitRootLogin = "no";
+    		AllowUsers = [ "alloar" ];
+  	};
+  };
+
+	    
+
   services = {
         pipewire = {
                 enable = true;
