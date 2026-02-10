@@ -59,6 +59,7 @@ environment.systemPackages = with pkgs; [
 	docker-compose
 	tailscale
 	traceroute
+	neovim
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
