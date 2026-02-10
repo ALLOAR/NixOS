@@ -4,6 +4,11 @@
   programs.zsh.enable = true;
   programs.git.enable = true;
   
+  swapDevices = [{
+  	device = "/var/lib/swapfile";
+  	size = 16*1024; # 16 GB
+  }];
+
   services.tailscale.enable = true;
   services.openssh = {
   enable = true;
