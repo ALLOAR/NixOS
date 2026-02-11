@@ -17,10 +17,6 @@
         system = "x86_64-linux";
         modules = [
           ./p_configuration.nix
-	home-manager.nixosModules.home-manager
-	{
-	home-manager.users.alloar = import ./home.nix;
-	}
         ];
       };
 
@@ -31,6 +27,13 @@
         ];
       };
 
+     homeConfigurations = {
+		alloar = home-manager.lib.homeManagerConfiguration {
+		pkgs = pkgs;
+		modules = [ ./home.nix ];
+		};
+
     };
+
   };
 }
