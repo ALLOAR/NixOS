@@ -60,6 +60,8 @@ environment.systemPackages = with pkgs; [
 	tailscale
 	traceroute
 	tmux
+	home-manager
+	vimPlugins.blink-ripgrep-nvim
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
