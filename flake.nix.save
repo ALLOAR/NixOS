@@ -11,8 +11,8 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
   let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+	system = "x86_64-linux";
+	pkgs = nixpkgs.legacyPackages.${system};
   in
   {
     nixosConfigurations = {
@@ -21,13 +21,13 @@
         system = "x86_64-linux";
         modules = [
           ./p_configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.alloar = import ./home.nix;
-            home-manager.backupFileExtension = "backup";
-          }
+	
+	 home-manager.nixosModules.home-manager
+        {
+        home-manager.users.alloar = import ./home.nix;
+        home-manager.backupFileExtension = "backup";
+        }
         ];
-      };
 
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -36,6 +36,14 @@
         ];
       };
 
+     homeConfigurations = {
+		alloar = home-manager.lib.homeManagerConfiguration {
+		pkgs = pkgs;
+		modules = [ ./home.nix ];
+		};
+
     };
+
   };
+};
 }
