@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -21,11 +21,6 @@
         system = "x86_64-linux";
         modules = [
           ./p_configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.alloar = import ./home.nix;
-            home-manager.backupFileExtension = "backup";
-          }
         ];
       };
 

@@ -1,6 +1,53 @@
 { config, pkgs, ... }: {
-	 
-	programs.zsh = {
+
+programs.zsh = {
                 enable = true;
-	};
+		initExtra = ''
+    		# Тут пишешь как в .zshrc
+    		fastfetch
+  		'';
+                shellAliases = {
+                        rebuild = "sudo nixos-rebuild switch";
+                        rebuildh = "home-manager switch";
+                        prog = "sudo nano /etc/nixos/configurations/programs.nix";
+                        c = "sudo nano /etc/nixos/configuration.nix";
+						cdc = "cd /etc/nixos/";
+						cdh = "cd /home/alloar/.config/home-manager/";
+           				act = "source venv/bin/activate";
+						deac = "deactivate";
+						p = "python";
+						p-start = "python3 -m venv venv";
+						hyp = "nano ~/.config/home-manager/config/hypr/hyprland.conf";
+						rg = "git add . && git commit -m \"$(date '+%Y-%m-%d %H:%M:%S')\"";
+						mk = "micro";
+		# ВАЖНО --- надо перезапустить zsh после применения конфигурации, можно просто перезайти а можно
+		# exec zsh	
+		};
+                oh-my-zsh = {
+                        enable = true;
+                        plugins = [ "git" "z" "sudo" "extract" "colored-man-pages" ];
+                        #git - для меня еще рановато
+                        #z - тип удобно переходить в директорию или открывать файл который ты часто
+                        #sudo esc + enter и команда автоматически добавляет sudo но для nixos бесползено
+                        #extract - удобная розпаковка файлов
+                        #colored-man-pages - удобная хрень для чтения ls --help но в виде команды man ls
+
+                        #theme = "zsh-powerlevel10k";
+			#theme = "agnoster"; - какое-то говно, 100% скип
+                        #theme = "robbyrussell"; # дефолт минимализм
+                        #theme = "bira"; ну тип баш строка только в 2 ряда
+                        #theme = "dst"; то же самое что и прошлое только хуже
+                        #theme = "gentoo"; почти то же самое что и дефолт, скип
+                        #theme = "minimal"; дефолт минимализм только белое
+                        #theme = "mortalscumbag"; редкостная хуета
+                        #theme = "pure"; не понял но тоже самое что и bira
+                        #theme = "pygmalion"; дефолт баш только с рвотными цветами
+                        #theme = "refined"; прям таки ультра минимализм но в 2 строки
+                        #theme = "sporty_256"; ох блядь какое же говно
+                        #theme = "ys"; противополножность минимализму, зато с встроеными часами, +
+                        #theme = "af-magic"; необычно и прикольно, подправить цвета и гуд
+                        #theme = "avit"; странно но хуйня
+                };
+	programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        };
 }

@@ -8,6 +8,7 @@
 	./other/stuff.nix
 	./other/config.nix
 	./other/game.nix
+	./other/disk.nix
 	
     ];
 }

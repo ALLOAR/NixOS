@@ -62,6 +62,11 @@ environment.systemPackages = with pkgs; [
 	tmux
 	home-manager
 	vimPlugins.blink-ripgrep-nvim
+	vimPlugins.LazyVim
+	zsh-powerlevel10k
+	oh-my-zsh
+	hyprlock
+	vimPlugins.nordic-nvim
 ];
 
 nixpkgs.config.permittedInsecurePackages = [

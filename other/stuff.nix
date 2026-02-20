@@ -10,7 +10,11 @@
 
   #services.displayManager.gdm.enable = true;
   
-  
+
+  programs.neovim.enable = true;
+  programs.bash.enable = true;
+  programs.vim.enable = true;
+
   services.displayManager.sddm = {
     enable = true;
     theme = "catppuccin-mocha-mauve";
