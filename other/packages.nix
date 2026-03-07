@@ -67,6 +67,9 @@ environment.systemPackages = with pkgs; [
 	oh-my-zsh
 	hyprlock
 	vimPlugins.nordic-nvim
+	usbutils
+	unzip
+	niri
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
