@@ -14,9 +14,14 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  outputs = { self, nixpkgs, home-manager, ... }:
   {
     nixosConfigurations = {
-
+	
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -32,7 +37,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jdoe = ./home.nix;
+            home-manager.users.alloar = ./home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix

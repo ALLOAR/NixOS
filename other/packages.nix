@@ -71,6 +71,16 @@ environment.systemPackages = with pkgs; [
 	unzip
 	niri
 	dunst
+
+
+
+
+
+
+# Themes
+	orchis-theme
+
+
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
