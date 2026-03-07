@@ -19,15 +19,23 @@
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./p_configuration.nix
-	
+          ./pc/p_configuration.nix
+	home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.alloar = ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
         ];
       };
 
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./l_configuration.nix
+          ./laptop/l_configuration.nix
 	 home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
