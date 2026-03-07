@@ -9,6 +9,8 @@
         markup = "full";
         format = "<b>%s</b>\\n%b";
         timeout = 2000;
+	history = "ctrl+grave";
+	history_lenght = "100";
       };
 
       urgency_low = {

@@ -71,8 +71,8 @@ environment.systemPackages = with pkgs; [
 	unzip
 	niri
 	dunst
-
-
+	blueman
+	pulseaudioFull
 
 
 
