@@ -12,13 +12,7 @@
   outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
   in
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
-
-  outputs = { self, nixpkgs, home-manager, ... }:
   {
     nixosConfigurations = {
 	
@@ -26,6 +20,7 @@
         system = "x86_64-linux";
         modules = [
           ./p_configuration.nix
+	
         ];
       };
 
