@@ -16,7 +16,6 @@
       let NERDTreeShowHidden=1
 
       " Инициализация vim-plug
-      call plug#begin('~/.local/share/nvim/plugged')
 
       Plug 'vim-airline/vim-airline'
       Plug 'preservim/nerdtree'
