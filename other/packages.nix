@@ -70,6 +70,7 @@ environment.systemPackages = with pkgs; [
 	usbutils
 	unzip
 	niri
+	dunst
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
