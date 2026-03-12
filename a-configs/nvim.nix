@@ -1,3 +1,4 @@
+{ config, lib, pkgs, ... }: 
 {
   programs.neovim = {
     enable = true;
@@ -12,22 +13,22 @@
       set softtabstop=4
       set scrolloff=5
       set clipboard=unnamedplus
-
       let NERDTreeShowHidden=1
-
-      " Инициализация vim-plug
-
-      Plug 'vim-airline/vim-airline'
-      Plug 'preservim/nerdtree'
-      Plug 'https://github.com/ap/vim-css/color'
-
-      call plug#end()
-
       " Горячие клавиши
       nnoremap <leader>n :NERDTreeFocus<CR>
       nnoremap <C-n> :NERDTree<CR>
       nnoremap <C-t> :NERDTreeToggle<CR>
       nnoremap <C-f> :NERDTreeFind<CR>
+	
     '';
+	
+   plugins = with pkgs.vimPlugins; [
+    vim-airline
+	vim-nerdtree-tabs
+	vim-nerdtree-syntax-highlight
+	nerdtree
+	nerdtree-git-plugin
+	
+  ];
   };
 }

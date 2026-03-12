@@ -73,8 +73,8 @@ environment.systemPackages = with pkgs; [
 	dunst
 	blueman
 	pulseaudioFull
-
-
+	google-chrome
+	niri
 
 
 # Themes
