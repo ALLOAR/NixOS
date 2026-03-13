@@ -75,4 +75,7 @@ hardware.bluetooth = {
   };
 };	
   security.rtkit.enable = true;
+  environment.variables = {
+  DISPLAY = ":0";
+};
 }

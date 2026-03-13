@@ -76,9 +76,9 @@ environment.systemPackages = with pkgs; [
 	niri
 	swww
 	vesktop
-#	xwayland-satellite
+	xwayland-satellite
 	xwayland
-
+	xeyes
 # Themes
 	orchis-theme
 
