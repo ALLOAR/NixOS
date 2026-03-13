@@ -73,12 +73,12 @@ environment.systemPackages = with pkgs; [
 	dunst
 	blueman
 	pulseaudioFull
-	google-chrome
 	niri
 	swww
 	vesktop
 #	xwayland-satellite
 	xwayland
+
 # Themes
 	orchis-theme
 
