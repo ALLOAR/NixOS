@@ -75,8 +75,10 @@ environment.systemPackages = with pkgs; [
 	pulseaudioFull
 	google-chrome
 	niri
-
-
+	swww
+	vesktop
+#	xwayland-satellite
+	xwayland
 # Themes
 	orchis-theme
 

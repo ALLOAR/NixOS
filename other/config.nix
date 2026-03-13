@@ -5,11 +5,19 @@
   programs.zsh.enable = true;
   programs.git.enable = true;
   services.blueman.enable = true;
-  
+  programs.xwayland.enable = true;
+
   swapDevices = [{
   	device = "/var/lib/swapfile";
   	size = 16*1024; # 16 GB
   }];
+
+  zramSwap = {
+    enable = true;
+    priority = 80;
+    algorithm = "lz4";
+    memoryPercent = 50;
+  };
 
   services.tailscale.enable = true;
   services.openssh = {
