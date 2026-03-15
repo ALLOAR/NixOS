@@ -8,7 +8,7 @@
         separator_color = "auto";
         markup = "full";
         format = "<b>%s</b>\\n%b";
-        timeout = 2000;
+        timeout = 5;
       };
 
       urgency_low = {
@@ -27,7 +27,7 @@
         background = "#F38BA8";
         foreground = "#1E1E2E";
         frame_color = "#F38BA8";
-        timeout = 2000;
+        timeout = 5;
       };
     };
   };

@@ -82,7 +82,6 @@ environment.systemPackages = with pkgs; [
 # Themes
 	orchis-theme
 
-
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
