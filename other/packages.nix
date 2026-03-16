@@ -81,7 +81,9 @@ environment.systemPackages = with pkgs; [
 	xeyes
 # Themes
 	orchis-theme
-
+	lsof
+	iotop
+	psmisc
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
