@@ -84,6 +84,9 @@ environment.systemPackages = with pkgs; [
 	lsof
 	iotop
 	psmisc
+	ddcutil
+	wlr-which-key
+	wlopm 
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
