@@ -16,7 +16,7 @@
 
   zramSwap = {
     enable = true;
-    priority = 80;
+    priority = 100;
     algorithm = "lz4";
     memoryPercent = 50;
   };
@@ -49,8 +49,8 @@
                         "bluez5.enable-sbc-xq" = true;
                         "bluez5.enable-msbc" = true;
                         "bluez5.enable-hw-volume" = true;
-                        "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
-                        };
+						"bluez5.roles" = [ "a2dp_sink" "hsp_hs" "hfp_hf" ];
+						};
                 };
         };
   };
