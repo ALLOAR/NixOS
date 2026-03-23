@@ -87,6 +87,7 @@ environment.systemPackages = with pkgs; [
 	ddcutil
 	wlr-which-key
 	wlopm 
+	libreoffice
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
