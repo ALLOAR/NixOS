@@ -64,10 +64,10 @@
                 #jack.enable = true;
                 wireplumber.extraConfig.bluetoothEnhancements = {
                         "monitor.bluez.properties" = {
-                        "bluez5.enable-sbc-xq" = true;
+                        #"bluez5.enable-sbc-xq" = true; # this enable good qulity, but its unstable
                         "bluez5.enable-msbc" = true;
                         "bluez5.enable-hw-volume" = true;
-						"bluez5.roles" = [ "a2dp_sink" "hsp_hs" "hfp_hf" ];
+						"bluez5.roles" = [ "a2dp_sink" "hsp_hs" ]; # can be added "hsp_hs" and "hfp_hf" but problems can occure
 						};
                 };
         };

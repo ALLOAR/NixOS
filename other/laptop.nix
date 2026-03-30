@@ -10,7 +10,7 @@ services.logind.settings.Login = {
 # one of "ignore", "poweroff", "reboot", "halt", "kexec", "suspend", "hibernate", "hybrid-sleep", "suspend-then-hibernate", "lock"
 
 services.tlp = {
-      enable = true;
+#      enable = true;
       settings = {
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
@@ -29,5 +29,8 @@ services.tlp = {
        START_CHARGE_THRESH_BAT0 = 60; # 40 and below it starts to charge
        STOP_CHARGE_THRESH_BAT0 = 90; # 80 and above it stops charging
 
+	# so it wont fuck my ass
+		WIFI_PWR_ON_AC = "off";
+		WIFI_PWR_ON_AC = "off";
       };
 };
