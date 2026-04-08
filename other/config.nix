@@ -67,7 +67,9 @@
                         #"bluez5.enable-sbc-xq" = true; # this enable good qulity, but its unstable
                         "bluez5.enable-msbc" = true;
                         "bluez5.enable-hw-volume" = true;
-						"bluez5.roles" = [ "a2dp_sink" "hsp_hs" ]; # can be added "hsp_hs" and "hfp_hf" but problems can occure
+						"bluez5.roles" = [ "a2dp_source" "hsp_ag" "hfp_ag"  ]; # can be added "hsp_hs" and "hfp_hf" but problems can occu
+						"bluez5.profile" = "a2dp-sink";
+# Bluez5.roles: 
 						};
                 };
         };
@@ -84,6 +86,7 @@ hardware.bluetooth = {
       # the tradeoff is increased power consumption. Defaults to
       # 'false'.
       FastConnectable = true;
+	  MultiProfile = "multiple";
     };
     Policy = {
       # Enable all controllers when they are found. This includes
@@ -109,7 +112,6 @@ hardware.bluetooth = {
   #  extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
     # output ends up in /run/wpa_supplicant/wpa_supplicant.conf
   #};
-  networking.networkmanager.enable = false;
 
 
   time.timeZone = "Europe/Warsaw";
