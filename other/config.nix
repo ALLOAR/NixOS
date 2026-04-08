@@ -101,14 +101,14 @@ hardware.bluetooth = {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   #networking.hostName = "laptop"; # Define your hostname.
-  #networking.networkmanager.enable = true;  # Easiest to use and most distros use this by defaul
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by defaul
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.wireless = {
-    enable = true;
+  #networking.wireless = {
+  #  enable = true;
   #  networks."mySSID".psk = "myPSK";
-    extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
+  #  extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
     # output ends up in /run/wpa_supplicant/wpa_supplicant.conf
-  };
+  #};
   networking.networkmanager.enable = false;
 
 
