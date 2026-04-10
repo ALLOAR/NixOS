@@ -19,6 +19,7 @@
       nnoremap <C-n> :NERDTree<CR>
       nnoremap <C-t> :NERDTreeToggle<CR>
       nnoremap <C-f> :NERDTreeFind<CR>
+
 	
     '';
 	
@@ -28,7 +29,12 @@
 	vim-nerdtree-syntax-highlight
 	nerdtree
 	nerdtree-git-plugin
-	
+	noice-nvim
+	which-key-nvim
   ];
+  extraLuaConfig = '' 
+	require("noice").setup()
+	require("which-key").setup()
+  '';	
   };
 }
