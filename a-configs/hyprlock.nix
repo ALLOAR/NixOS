@@ -1,14 +1,14 @@
 { config, pkgs, lib, ... }: {
 
-general {
+general = {
 	disable_loading_bar = false;
 	grace = 5;
 	hide_coursor = true;
 
-}
+};
 
-label {
-    monitor =
+label = {
+    monitor = ;
     text = cmd[update:1000] echo "$(date +'%H:%M')";
     color = rgba(255, 255, 255, 0.9);
     font_size = 80;
@@ -16,9 +16,9 @@ label {
     position = 0, 200;
     halign = center;
     valign = center;
-}
+};
 
-label {
+label = {
     monitor = ;
     text = cmd[update:60000] echo "$(date +'%A, %d %B')";
     color = rgba(255, 255, 255, 0.7);
@@ -27,8 +27,8 @@ label {
     position = 0, 120;
     halign = center;
     valign = center;
-}
-label { 
+};
+label = { 
 	monitor = ;
 	text = why are you still alive?;
 	color = rgba(255, 255, 255, 0.7);
@@ -38,8 +38,8 @@ label {
 	halign = center;
 	valign = center;
 
-}
-background {
+};
+background = {
     monitor = ;
     path = ./dark_water.jpg;
 	blur_passes = 3;
@@ -48,9 +48,9 @@ background {
     contrast = 1.1;
     brightness = 0.8;
     vibrancy = 0.2;
-}
+};
 
-label {
+label = {
     monitor = ;
     text = cmd[update:1000] echo "$(date +'%H:%M')";
     color = rgba(255, 255, 255, 0.9);
@@ -59,9 +59,9 @@ label {
     position = 0, 200;
     halign = center;
     valign = center;
-}
+};
 
-label {
+label = {
     monitor = ;
     text = cmd[update:60000] echo "$(date +'%A, %d %B')";
     color = rgba(255, 255, 255, 0.7);
@@ -70,9 +70,9 @@ label {
     position = 0, 120;
     halign = center;
     valign = center;
-}
+};
 
-input-field {
+input-field = {
     monitor = ;
     size = 300, 50;
     outline_thickness = 2;
@@ -88,4 +88,5 @@ input-field {
     position = 0, -50;
     halign = center;
     valign = center;
+};
 }
