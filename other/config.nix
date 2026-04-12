@@ -93,10 +93,8 @@ hardware.bluetooth = {
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by defaul
   # DONT TOUCH MY FUCKING DNS
 	# If i use no networkmanager
-  #networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
-  #networking.ghcpcd.extraConfig = "nohook resolv.conf";
-	# For networkmanager
-  networking.networkmanager.dns = "none";
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  networking.dhcpcd.extraConfig = "nohook resolv.conf";
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   #networking.wireless = {
   #  enable = true;
