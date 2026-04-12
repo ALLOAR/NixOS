@@ -88,6 +88,7 @@ environment.systemPackages = with pkgs; [
 	wlr-which-key
 	wlopm 
 	libreoffice
+	zip
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
