@@ -8,7 +8,7 @@
 	../other/config.nix
 	../other/game.nix
 	../other/disk.nix
-	../other/swap.nix
+	./other/swap.nix
 	
     ];
 }

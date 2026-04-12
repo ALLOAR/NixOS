@@ -12,14 +12,6 @@
   programs.bash.enable = true;
   programs.vim.enable = true;
 
-
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    algorithm = "lz4";
-    memoryPercent = 50;
-  };
-
   services.tailscale.enable = true;
   services.openssh = {
   enable = true;
