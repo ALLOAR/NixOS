@@ -6,7 +6,7 @@
     ../nixos-hardware/lenovo/ideapad/15ach6/default.nix
 	../other/packages.nix
 	../other/config.nix
-	./other/swap.nix
+	./swap.nix
     ];
 }
 
