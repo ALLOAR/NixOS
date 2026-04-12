@@ -94,7 +94,7 @@ environment.systemPackages = with pkgs; [
 nixpkgs.config.permittedInsecurePackages = [
 #	"ciscoPacketTracer8-8.2.2"
 ];
-  fonts.enableFontDir = true;
+  fonts.fontDir.enable = true;
 
   fonts.packages = with pkgs; [
     jetbrains-mono

@@ -2,7 +2,9 @@
 # --- git --- #
         programs.git = {
         enable = true;
-        userName = "ALLOAR";
-        userEmail = "evgenzbiranik@gmail.com";
+		  settings = {
+			user.name = "ALLOAR";
+			user.email = "evgenzbiranik@gmail.com";
+		  };
         };
 }
