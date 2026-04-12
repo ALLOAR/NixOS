@@ -13,12 +13,6 @@
   programs.vim.enable = true;
 
 
- swapDevices = [{
-  	device = "/var/lib/swapfile";
-  	size = 16*1024; # 16 GB
-	priority = 10;
-  }];
-
   zramSwap = {
     enable = true;
     priority = 100;
@@ -105,6 +99,12 @@ hardware.bluetooth = {
   boot.loader.efi.canTouchEfiVariables = true;
   #networking.hostName = "laptop"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by defaul
+  # DONT TOUCH MY FUCKING DNS
+	# If i use no networkmanager
+  #networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  #networking.ghcpcd.extraConfig = "nohook resolv.conf";
+	# For networkmanager
+  networking.networkmanager.dns = "none";
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   #networking.wireless = {
   #  enable = true;
