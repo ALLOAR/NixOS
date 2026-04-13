@@ -89,6 +89,7 @@ environment.systemPackages = with pkgs; [
 	wlopm 
 	libreoffice
 	zip
+	jq
 ];
 
 nixpkgs.config.permittedInsecurePackages = [

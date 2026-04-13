@@ -27,9 +27,15 @@
  
   services.displayManager.sddm = {
     enable = true;
-    theme = "catppuccin-mocha-mauve";
+    theme = "where_is_my_sddm_theme";
     # Enables experimental Wayland support
     wayland.enable = true;
+	extraPackages = [ pkgs.qt6.qt5compat ];
+	settings = {
+    Wayland = {
+      EnableHiDPI = true;
+    };
+	};
   };
 
   environment.systemPackages = [ 
