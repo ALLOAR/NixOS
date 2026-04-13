@@ -13,5 +13,6 @@
 	./a-configs/dunst.nix
 	./a-configs/gtk.nix
 	./a-configs/hyprlock.nix
+	./a-configs/hypridle.nix
 ];
 }
