@@ -12,7 +12,7 @@
       background = [
         {
           monitor = "";
-          path = "${config.home.homeDirectory}/nixos/misc/dark_water.jpg";  # абсолютный путь
+          path = "${config.home.homeDirectory}/nixos/a-configs/misc/dark_water.jpg";  # абсолютный путь
           blur_passes = 3;
           blur_size = 2;
           noise = 0.02;

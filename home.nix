@@ -12,6 +12,6 @@
 	./a-configs/nvim.nix
 	./a-configs/dunst.nix
 	./a-configs/gtk.nix
-	#./a-configs/hyprlock.nix
+	./a-configs/hyprlock.nix
 ];
 }
