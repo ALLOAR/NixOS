@@ -90,6 +90,8 @@ environment.systemPackages = with pkgs; [
 	libreoffice
 	zip
 	jq
+	swaynotificationcenter
+	tor-browser
 ];
 
 nixpkgs.config.permittedInsecurePackages = [

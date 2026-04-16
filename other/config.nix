@@ -99,14 +99,24 @@ hardware.bluetooth = {
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by defaul
   # DONT TOUCH MY FUCKING DNS
 	# If i use no networkmanager
-  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
-  networking.dhcpcd.extraConfig = "nohook resolv.conf";
+  #networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  #networking.dhcpcd.extraConfig = "nohook resolv.conf";
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   #networking.wireless = {
   #  enable = true;
   #  networks."mySSID".psk = "myPSK";
   #  extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
     # output ends up in /run/wpa_supplicant/wpa_supplicant.conf
+  #};
+
+  #environment.etc."resolv.conf" = {
+  #  text = ''
+  #    nameserver 1.1.1.1
+  #	  search taila3ac61.ts.net taila3ac61.ts.net
+  #    nameserver 8.8.8.8
+  #    options edns0
+  #  '';
+  #  mode = "0444"; # readonly для всех
   #};
 
 
@@ -126,7 +136,8 @@ hardware.bluetooth = {
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";
-
+  
+  environment.sessionVariables.DISPLAY = ":0";
   environment.variables = {
     DISPLAY = ":0";
 };

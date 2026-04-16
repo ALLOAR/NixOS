@@ -17,10 +17,10 @@
     nixosConfigurations = {
 	
       pc = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
+	  inherit system;
+	  modules = [
           ./pc/p_configuration.nix
-	home-manager.nixosModules.home-manager
+		home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -33,10 +33,10 @@
       };
 
       laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
+        inherit system;
+		modules = [
           ./laptop/l_configuration.nix
-	 home-manager.nixosModules.home-manager
+		 home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
