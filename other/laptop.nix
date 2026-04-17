@@ -2,8 +2,8 @@
 
 
 services.logind.settings.Login = {
-  HandleLidSwitch = "ignore"; # if lid just lock
-  HandleLidSwitchExternalPower = "hibernate"; # if lid lockd and laptop on power
+  HandleLidSwitch = "hybrid-sleep"; # if lid just lock
+  HandleLidSwitchExternalPower = "hybrid-sleep"; # if lid lockd and laptop on power
   HandleLidSwitchDocked = "ignore"; # of lid lock and laptop have dock-station
 };
 
