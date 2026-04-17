@@ -138,6 +138,6 @@ hardware.bluetooth = {
   system.stateVersion = "25.11";
   
   environment.variables = {
-    DISPLAY = ":0";
+#    DISPLAY = ":0";
 };
 }
