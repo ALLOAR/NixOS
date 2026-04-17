@@ -93,6 +93,7 @@ environment.systemPackages = with pkgs; [
 	swaynotificationcenter
 	tor-browser
 	fuzzel
+	youtube-music
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
