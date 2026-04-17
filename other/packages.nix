@@ -92,6 +92,7 @@ environment.systemPackages = with pkgs; [
 	jq
 	swaynotificationcenter
 	tor-browser
+	fuzzel
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
