@@ -137,7 +137,6 @@ hardware.bluetooth = {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";
   
-  environment.sessionVariables.DISPLAY = ":0";
   environment.variables = {
     DISPLAY = ":0";
 };
