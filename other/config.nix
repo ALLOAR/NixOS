@@ -119,6 +119,9 @@ hardware.bluetooth = {
   #  mode = "0444"; # readonly для всех
   #};
 
+  systemd.sleep.extraConfig = ''
+  HibernateDelaySec=30min
+  '';
 
   time.timeZone = "Europe/Warsaw";
 

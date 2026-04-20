@@ -15,8 +15,8 @@
           on-timeout = "hyprlock";
         }
         {
-          timeout = 600;
-          on-timeout = "systemctl hybrid-sleep";
+          timeout = 300;
+          on-timeout = "systemctl suspend-then-hibernate";
           on-resume = "dunstify welcome back";        # опечатка: wellcome → welcome
         }
       ];
