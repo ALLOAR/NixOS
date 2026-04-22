@@ -25,6 +25,7 @@
   };
 
  
+#ALL Themes here: ls /run/current-system/sw/share/sddm/themes/
   services.displayManager.sddm = {
     enable = true;
     theme = "where_is_my_sddm_theme";
