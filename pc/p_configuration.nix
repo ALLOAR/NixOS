@@ -8,6 +8,7 @@
 	../other/config.nix
 	../other/game.nix
 	../other/disk.nix
+	../other/virtmanager.nix
 	./swap.nix
 	
     ];
