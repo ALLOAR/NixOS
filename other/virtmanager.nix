@@ -1,11 +1,18 @@
 { pkgs-stable, pkgs, ... }: {
-  services {
+  services = {
 	qemuGuest.enable = true;
-	spice-vdagent.enble = true;
-	spice-autorandr.enble = true;
+	spice-autorandr.enable = true;
+	spice-vdagentd.enable = true;
   };
-  virtualisation {
-	libvirtd.enable = true;
+  virtualisation = {
+	libvirtd = { 
+		enable = true;
+
+	  qemu = {
+		package = pkgs.qemu_kvm;
+		swtpm.enable = true;
+      };
+	};
 	spiceUSBRedirection.enable = true;
 	libvirtd.qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
   };

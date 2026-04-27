@@ -7,6 +7,7 @@
   programs.git.enable = true;
   services.blueman.enable = true;
   programs.xwayland.enable = true;
+  security.polkit.enable = true;
 
   programs.neovim.enable = true;
   programs.bash.enable = true;
@@ -128,7 +129,7 @@ hardware.bluetooth = {
 
   users.users.alloar = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "docker" "libvirtd" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
      ];
