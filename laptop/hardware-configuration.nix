@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/b42fb6d8-c053-47bc-a4ea-baba0bef2cab";
