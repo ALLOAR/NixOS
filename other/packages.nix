@@ -94,6 +94,7 @@ environment.systemPackages = with pkgs; [
 	tor-browser
 	fuzzel
 	youtube-music
+	mdadm
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
