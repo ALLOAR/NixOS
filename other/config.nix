@@ -24,8 +24,12 @@
     		AllowUsers = [ "alloar" ];
   	};
   };
-
- 
+security.sudo.extraRules = [
+	{
+		users = [ "alloar"];
+		commands = [ { command = "/run/current-system/sw/bin/ddcutil"; options = [ "SETENV" "NOPASSWD" ]; } ];
+	}
+];
 #ALL Themes here: ls /run/current-system/sw/share/sddm/themes/
   services.displayManager.sddm = {
     enable = true;
@@ -127,9 +131,11 @@ hardware.bluetooth = {
 
   time.timeZone = "Europe/Warsaw";
 
+#This and i2c grup for ddcutil work, i will have permition for /dev/i2c-*
+  hardware.i2c.enable = true;
   users.users.alloar = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "docker" "libvirtd" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "docker" "i2c" "libvirtd" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
      ];
