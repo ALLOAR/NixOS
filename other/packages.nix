@@ -95,6 +95,7 @@ environment.systemPackages = with pkgs; [
 	fuzzel
 	youtube-music
 	mdadm
+	zfs
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
