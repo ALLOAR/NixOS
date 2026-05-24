@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }: {
 
 options = {
-	gaming.enable = lib.MakeEnableOption "gaming stuff";
+	gaming.enable = lib.mkEnableOption "gaming stuff";
 };
 
 config = lib.mkIf config.gaming.enable {
