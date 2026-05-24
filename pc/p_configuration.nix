@@ -9,6 +9,7 @@
 	../other/game.nix
 	../other/disk.nix
 	../other/virtmanager.nix
+	../other/options.nix
 	./swap.nix
 	
     ];
