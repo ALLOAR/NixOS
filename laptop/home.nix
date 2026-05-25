@@ -6,13 +6,13 @@
 	};
 	
 	imports = [
-#	./a-configs/zsh.nix
-	#./home-configs/alacritty.nix
-	./a-configs/git.nix
-	./a-configs/nvim.nix
-	./a-configs/dunst.nix
-	./a-configs/gtk.nix
-	./a-configs/hyprlock.nix
-	./a-configs/l_hypridle.nix
+#	../a-configs/zsh.nix
+	#../home-configs/alacritty.nix
+	../a-configs/git.nix
+	../a-configs/nvim.nix
+	../a-configs/dunst.nix
+	../a-configs/gtk.nix
+	../a-configs/hyprlock.nix
+	../a-configs/l_hypridle.nix
 ];
 }

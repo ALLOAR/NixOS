@@ -5,8 +5,8 @@ options = {
 };
 
 config = lib.mkIf config.gaming.enable {
-	programs.steam.enable =	lib.MkDefault true;
-	hardware.opengl.enable = lib.MkDefault true;
+	programs.steam.enable =	lib.mkDefault true;
+	hardware.opengl.enable = lib.mkDefault true;
 };
 
 }
