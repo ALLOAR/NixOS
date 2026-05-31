@@ -127,10 +127,6 @@ hardware.bluetooth = {
   #  '';
   #  mode = "0444"; # readonly для всех
   #};
-systemd.sleep.settings.Sleep = ''
-  HibernateDelaySec=30min
-  '';
-
   time.timeZone = "Europe/Warsaw";
 
 #This and i2c grup for ddcutil work, i will have permition for /dev/i2c-*
