@@ -8,6 +8,7 @@
   services.blueman.enable = true;
   programs.xwayland.enable = true;
   security.polkit.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   programs.neovim.enable = true;
   programs.bash.enable = true;

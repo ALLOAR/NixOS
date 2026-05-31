@@ -96,6 +96,8 @@ environment.systemPackages = with pkgs; [
 	youtube-music
 	mdadm
 	zfs
+	alsa-utils
+	lvm2
 ];
 
 nixpkgs.config.permittedInsecurePackages = [
