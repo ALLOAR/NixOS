@@ -127,8 +127,7 @@ hardware.bluetooth = {
   #  '';
   #  mode = "0444"; # readonly для всех
   #};
-
-  systemd.sleep.extraConfig = ''
+systemd.sleep.settings.Sleep = ''
   HibernateDelaySec=30min
   '';
 
