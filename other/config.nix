@@ -9,6 +9,8 @@
   programs.xwayland.enable = true;
   security.polkit.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+  security.pam.services.sddm.enableGnomeKeyring = false;
+
 
   programs.neovim.enable = true;
   programs.bash.enable = true;

@@ -12,10 +12,14 @@
       listener = [
         {
           timeout = 180;                              # число, не строка
-          on-timeout = "hyprlock";
+          on-timeout = "niri msg action power-off-monitors";
+		}
+		{
+		  timeout = 300;
+		  on-timeout = "hyprlock";
         }
         {
-          timeout = 300;
+          timeout = 600;
           on-timeout = "systemctl suspend-then-hibernate";
           on-resume = "dunstify welcome back";        # опечатка: wellcome → welcome
         }
